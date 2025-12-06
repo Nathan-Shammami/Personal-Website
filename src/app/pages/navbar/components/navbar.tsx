@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import "./navStyles.css";
 
 export default function Navbar() {

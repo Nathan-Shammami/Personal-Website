@@ -2,12 +2,12 @@
 .navbar{
     height: 5vh;
     width: 100vw;
-    background-color: var(--background);
+    background-color: #dbdadad6;
     color: black;
     padding-top: 5vh;
     padding-left: 2.5vw;
     padding-right: 2.5vw;
-    padding-bottom: 2.5vh;
+    padding-bottom: 4vh;
     position: sticky;
 }
 
@@ -36,7 +36,7 @@
     position: relative;
 }
 
-/* animation for hovering a link */
+/* animation for hovering a link in navbar*/
 .navLinks::after {
   content: "";
   position: absolute;
@@ -47,7 +47,6 @@
   background: black;
   transition: width 0.25s ease-in-out;
 }
-
 .navLinks:hover::after{
     width: 100%;
 }
