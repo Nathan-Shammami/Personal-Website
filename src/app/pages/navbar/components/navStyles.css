@@ -1,0 +1,53 @@
+/* navbar container */
+.navbar{
+    height: 5vh;
+    width: 100vw;
+    background-color: var(--background);
+    color: black;
+    padding-top: 5vh;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    padding-bottom: 2.5vh;
+    position: sticky;
+}
+
+/* create the left and right containers for the navbar */
+.navLeft, .navRight{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 50vw;
+    list-style-type: none;
+    gap: 2vw;
+}
+.navLeft{
+    float: left;
+}
+.navRight{
+    justify-content: flex-end;
+    float: right;
+}
+
+/* handling the nav headers */
+.navLinks{
+    display: flex;
+    gap: 2vw;
+    padding-bottom: 1vh;
+    position: relative;
+}
+
+/* animation for hovering a link */
+.navLinks::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: black;
+  transition: width 0.25s ease-in-out;
+}
+
+.navLinks:hover::after{
+    width: 100%;
+}
