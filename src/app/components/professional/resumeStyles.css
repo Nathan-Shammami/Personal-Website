@@ -49,7 +49,7 @@
 }
 
 .timeline-dot.active {
-    background: #dc2626;
+    background: #d86c4f;
     transform: scale(1.1);
 }
 
