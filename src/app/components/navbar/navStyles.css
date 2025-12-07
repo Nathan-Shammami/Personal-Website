@@ -2,7 +2,7 @@
 .navbar{
     height: 5vh;
     width: 100vw;
-    background-color: #dbdadad6;
+    background-color: #e5e5e5;
     color: black;
     padding-top: 5vh;
     padding-left: 2.5vw;
@@ -24,6 +24,7 @@
 }
 .navLeft{
     float: left;
+    /* color: #d86c4f; */
 }
 .navRight{
     justify-content: flex-end;
