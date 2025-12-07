@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import React from "react";
-import Navbar from "./pages/navbar/navbar";
-import Resume from "./pages/professional/Resume";
-import AboutMe from "./pages/about/aboutMe";
+import Navbar from "./components/navbar/navbar";
+import Resume from "./components/professional/Resume";
+import AboutMe from "./components/about/aboutMe";
 
 export default function Home() {
   return (
