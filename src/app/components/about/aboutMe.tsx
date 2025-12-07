@@ -2,23 +2,23 @@
 
 import React, { useState, useEffect } from "react";
 import "./aboutMeStyles.css";
-import Images from "../../assets/index";
+import { images } from "../../assets/index";
 
 export default function AboutMe() {
     const [index, setIndex] = useState(0);
     const [isFading, setIsFading] = useState(false);
-    const images = [Images.headshot, Images.designDay, Images.gradPhoto,];
+    const Images = [images.headshot, images.designDay, images.gradPhoto,];
 
     useEffect(() => {
         const interval = setInterval(() => {
             setIsFading(true);
             setTimeout(() => {
-                setIndex((prev) => (prev + 1) % images.length);
+                setIndex((prev) => (prev + 1) % Images.length);
                 setIsFading(false);
             }, 500);
         }, 10000);
         return () => clearInterval(interval);
-    }, [images.length]);
+    }, [Images.length]);
 
     return (
         <div className="sectionHeader">
@@ -32,11 +32,11 @@ export default function AboutMe() {
                     <h2 className="subHeader">Outside of work, I enjoy playing around with personal projects and hanging out with friends. I have also recently been getting into winter and water sports with wake surfing in the summer and skiing in the winters.</h2>
                 </div>
                 <div className="aboutMeContainerRight">
-                    <div className="image-container">
+                    <div className="imageContainer">
                     <img
-                        src={images[index].src ?? images[index]}
+                        src={Images[index].src ?? Images[index]}
                         alt="image of me"
-                        className={`rotating-img ${isFading ? "fade-out" : "fade-in"}`}
+                        className={`rotatingImg ${isFading ? "fadeOut" : "fadeIn"}`}
                     />
                     </div>
                 </div>
