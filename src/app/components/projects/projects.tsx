@@ -40,7 +40,7 @@ export default function ProjectsCarousel() {
         setTranslateX(diff);
     };
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const handleMouseMove = (e: MouseEvent) => {
         if (!isDragging) return;
         const currentX = e.clientX;
         const diff = currentX - startX;
