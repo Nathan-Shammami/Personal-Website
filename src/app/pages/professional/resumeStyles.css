@@ -1,14 +1,15 @@
 /* resume container */
 .resumeContainer {
     display: flex;
-    gap: 40px;
-    max-width: 1200px;
+    gap: 4vw;
+    max-width: 80vw;
 }
 
 /* left side of resume */
 .timeline {
     position: relative;
     padding: 20px 0;
+    padding-left: 25vw;
 }
 
 .timeline-item {
