@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/navbar";
 import Resume from "./components/professional/Resume";
 import AboutMe from "./components/about/aboutMe";
 import ProjectsCarousel from "./components/projects/projects";
+import Footer from "./components/footer/footer";
 
 export default function Home() {
   return (
@@ -30,11 +31,11 @@ export default function Home() {
           </div>
           <Resume />
         </section>
-
-        {/* CONTACT SECTION */}
-        <section id="contact">
-        </section>
       </div>
+      {/* CONTACT SECTION */}
+      <section id="contact">
+        <Footer />
+      </section>
     </>
   );
 }
