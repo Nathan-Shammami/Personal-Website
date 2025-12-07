@@ -33,6 +33,11 @@ body {
   margin: 0;
 }
 
+.mainContent{
+  padding-top: 2.5vh;
+  padding-left: 5vw;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -48,7 +53,7 @@ a {
   color: #949494;
 }
 .sectionHeader{
-  padding-top: 5vh;
+  padding-top: 2.5vh;
   flex-direction: center;
   padding-left: 10vw;
 }
