@@ -12,7 +12,7 @@
     padding-left: 25vw;
 }
 
-.timeline-item {
+.timelineItem {
     position: relative;
     cursor: pointer;
     display: flex;
@@ -21,7 +21,7 @@
     height: 80px;
 }
 
-.timeline-date {
+.timelineDate {
     font-size: 14px;
     color: #666;
     font-weight: 400;
@@ -30,14 +30,14 @@
     line-height: 1.3;
 }
 
-.timeline-marker {
+.timelineMarker {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.timeline-dot {
+.timelineDot {
     width: 14px;
     height: 14px;
     background: #333;
@@ -48,12 +48,12 @@
     flex-shrink: 0;
 }
 
-.timeline-dot.active {
+.timelineDot.active {
     background: #d86c4f;
     transform: scale(1.1);
 }
 
-.timeline-line {
+.timelineLine {
     position: absolute;
     width: 2px;
     height: 80px;
@@ -65,7 +65,7 @@
 }
 
 /* right side of resume */
-.content-section {
+.contentSection {
     flex: 1;
     display: flex;
     align-items: flex-start;
@@ -127,4 +127,66 @@
 .timeline-item:hover .timeline-dot:not(.active) {
     background: #666;
     transform: scale(1.05);
+}
+
+/* Mobile / Tablet Styles */
+@media (max-width: 770px) {
+    .resumeContainer {
+        flex-direction: column;
+        max-width: 100%;
+        gap: 30px;
+        padding: 0 5vw;
+    }
+
+    .timeline {
+        padding-left: 0;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto; 
+        scrollbar-width: none;
+    }
+
+    .timelineItem {
+        flex-direction: column; 
+        height: auto;
+        min-width: 25px; 
+        flex-shrink: 0;
+        gap: 8px;
+        align-items: left;
+        padding: 0 5px; 
+    }
+
+    .timelineDate {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        color: #333; 
+        white-space: nowrap; 
+    }
+
+    .timelineMarker {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        z-index: 10; 
+    }
+
+    .timelineLine {
+        position: absolute;
+        width: calc(100% + 8px);
+        height: 2px;
+        top: 6px;
+        left: calc(50% + 7px); 
+        transform: none;
+    }
+
+    .contentSection {
+        width: 100%;
+        padding: 0;
+    }
+
+    .resumeCard {
+        padding: 24px;
+    }
 }
