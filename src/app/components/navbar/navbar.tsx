@@ -10,8 +10,8 @@ export default function Navbar() {
             </div>
             <div className="navRight">
                 <a href="#about" className="navLinks">About</a>
-                <a href="#projects" className="navLinks">Projects</a>
-                <a href="#experience" className="navLinks">Experience</a>
+                <a href="#projects" className="navLinks">Experience</a>
+                <a href="#experience" className="navLinks">Projects</a>
                 <a href="#contact" className="navLinks">Contact</a>
             </div>
         </div>
