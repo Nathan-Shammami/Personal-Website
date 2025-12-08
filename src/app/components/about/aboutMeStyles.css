@@ -1,45 +1,81 @@
 .aboutMeContainer {
-    display: flex;    
-    gap: 4vw;                 
+    display: flex;
+    align-items: center; 
+    gap: 4rem; 
+    justify-content: center;
     padding: 4vw;
     padding-left: 0;
-    padding-top: 1vh;
-    padding-bottom: 0;
     background-color: var(--background);
     color: var(--foreground);
+    max-width: 1400px;
+    margin: 0 auto;
 }
-.aboutMeContainerLeft{
-    float: left;
-    width: 20vw;
+
+.aboutMeContainerLeft {
+    flex: 1; 
+    max-width: 800px; 
 }
-.aboutMeContainerRight{
-    width: 25vw;
-    float: right;
-    /* margin-right:25vw; */
+
+.aboutMeContainerRight {
+    flex-shrink: 0; 
+    display: flex;
+    justify-content: flex-end;
 }
+
 .imageContainer {
-  width: 400px;      
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 4vw;
+    width: 400px;      
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 4vw;
 }
 
 .rotatingImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   
-  border-radius: 4vw;     
-  transition: opacity 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+    border-radius: 4vw;     
+    transition: opacity 0.5s ease-in-out;
 }
-
-/* Fade states */
 .fadeIn {
-  opacity: 1;
+    opacity: 1;
 }
 
 .fadeOut {
-  opacity: 0;
+    opacity: 0;
+}
+
+/* Tablet / Mobile Layout */
+@media (max-width: 1024px) {
+    .aboutMeContainer {
+        /* Stack them vertically on smaller screens */
+        flex-direction: column-reverse; 
+        gap: 2rem;
+        padding-top: 4vh;
+        text-align: center;
+    }
+
+    .aboutMeContainerRight {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .aboutMeContainerLeft {
+        width: 100%;
+    }
+}
+
+/* Small Mobile styles (425px and below) */
+@media (max-width: 425px) {
+    .imageContainer {
+        width: 80vw;
+        height: 80vw;
+        border-radius: 8vw;
+    }
+    
+    .rotatingImg {
+        border-radius: 8vw;
+    }
 }
