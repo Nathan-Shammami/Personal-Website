@@ -18,11 +18,6 @@ export default function Home() {
           <AboutMe />
         </section>
 
-        {/* PROJECTS SECTION */}
-        <section id="projects">
-          <ProjectsCarousel />
-        </section>
-
         {/* EXPERIENCE SECTION */}
         <section id="experience">
           <div className="sectionHeader">
@@ -31,7 +26,19 @@ export default function Home() {
           </div>
           <Resume />
         </section>
+
+        {/* PROJECTS SECTION */}
+        <section id="projects">
+          <div className="sectionHeader">
+            <h1 className="tabHeader"> My Projects </h1>
+            <h2 className="subHeader"> A selection of projects I've worked on</h2>
+          </div>
+          <ProjectsCarousel />
+        </section>
+
+
       </div>
+
       {/* CONTACT SECTION */}
       <section id="contact">
         <Footer />
@@ -39,3 +46,9 @@ export default function Home() {
     </>
   );
 }
+
+
+// TODO Mobile Responsiveness
+// TODO Add animations to sections
+// TODO Add more projects to the projects section
+// TODO UI improvements

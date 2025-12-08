@@ -4,14 +4,37 @@ import React, { useRef, useState, useEffect } from "react";
 import projectList from "./projectsData";
 import "./projectsStyles.css";
 
-
 export default function ProjectsCarousel() {
     const [selectedIndex, setSelectedIndex] = useState<number>(0); 
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [translateX, setTranslateX] = useState(0);
-    const carouselRef = useRef(null);
-    
+    const carouselRef = useRef<HTMLDivElement | null>(null);
+    const [cardWidth, setCardWidth] = useState(0);
+
+    // math for getting card width based on screen size
+    useEffect(() => {
+        const updateCardWidth = () => {
+            if (carouselRef.current) {
+                const firstCard = carouselRef.current.querySelector('.projectCard');
+                if (firstCard) {
+                    const GAP = 24;
+                    const newCardWidth = firstCard.getBoundingClientRect().width + GAP;
+                    setCardWidth(newCardWidth);
+                }
+            }
+        };
+
+        updateCardWidth();
+        window.addEventListener('resize', updateCardWidth);
+        const timeout = setTimeout(updateCardWidth, 10);
+        
+        return () => {
+            window.removeEventListener('resize', updateCardWidth);
+            clearTimeout(timeout);
+        };
+    }, []);
+
     // overflow for previous and next
     const handlePrevious = () => {
         setSelectedIndex((prev) => (prev === 0? projectList.length -1 : prev - 1));
@@ -94,8 +117,6 @@ export default function ProjectsCarousel() {
 
     return (
         <div className="projectsContainer">
-            <h1 className="projectsHeader">My Projects</h1>
-            <h2 className="projectsSubtitle">A selection of projects I've worked on</h2>
             <div className="carouselWrapper">
                 <div 
                     ref={carouselRef}
@@ -108,7 +129,7 @@ export default function ProjectsCarousel() {
                     <div 
                         className={`carouselTrack ${isDragging ? 'dragging' : ''}`}
                         style={{ 
-                            transform: `translateX(calc(-${selectedIndex * 100}% + ${translateX}px))`,
+                            transform: `translateX(calc(-${selectedIndex * cardWidth}px + ${translateX}px))`,
                         }}
                     >
                         {projectList.map((project, index) => (

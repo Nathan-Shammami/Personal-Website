@@ -10,12 +10,12 @@
 }
 .aboutMeContainerLeft{
     float: left;
+    width: 20vw;
 }
 .aboutMeContainerRight{
     width: 25vw;
     float: right;
-    padding-left: 5vw;
-    margin-right:25vw;
+    /* margin-right:25vw; */
 }
 .imageContainer {
   width: 400px;      

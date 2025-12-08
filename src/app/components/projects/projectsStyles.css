@@ -21,6 +21,7 @@
 .carouselWrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 32px;
     overflow: hidden;
     position: relative;
@@ -32,8 +33,9 @@
     user-select: none;
     position: relative;
     cursor: grab;
-    padding-left: 20vw;
-    padding-right: 20vw;
+    max-width: 800px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .carousel:active {
@@ -51,7 +53,8 @@
 }
 
 .projectCard {
-    min-width: 100%;
+    width: 100%;
+    flex-shrink: 0;
     background-color: #fff;
     border-radius: 16px;
     overflow: hidden;
@@ -168,4 +171,126 @@
 .indicator.active {
     background-color: #333;
     width: 32px;
+}
+
+/* Tablet styles (770px and below) */
+@media (max-width: 770px) {
+    .projectsContainer {
+        padding-top: 1vh;
+    }
+
+    .carousel {
+        max-width: 90vw;
+    }
+
+    .projectCard {
+        width: 80vw;
+    }
+
+    .cardImage {
+        height: 250px;
+    }
+
+    .cardContent {
+        padding: 24px;
+    }
+
+    .cardTitle {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .cardDescription {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .tagsRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .tags {
+        gap: 8px;
+    }
+
+    .tag {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .viewProjectButton {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Mobile styles (425px and below) */
+@media (max-width: 425px) {
+    .projectsContainer {
+        padding-top: 0.5vh;
+    }
+
+    .carousel {
+        max-width: 95vw;
+    }
+
+    .projectCard {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .cardImage {
+        height: 200px;
+    }
+
+    .cardContent {
+        padding: 20px;
+    }
+
+    .cardTitle {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .cardDescription {
+        font-size: 14px;
+        margin-bottom: 16px;
+        line-height: 1.6;
+    }
+
+    .tagsRow {
+        gap: 12px;
+    }
+
+    .tags {
+        gap: 6px;
+    }
+
+    .tag {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .viewProjectButton {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .carouselIndicators {
+        margin-top: 24px;
+        gap: 6px;
+    }
+
+    .indicator {
+        height: 6px;
+        width: 6px;
+    }
+
+    .indicator.active {
+        width: 24px;
+    }
 }
