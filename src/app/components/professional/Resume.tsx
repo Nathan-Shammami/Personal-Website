@@ -15,7 +15,6 @@ export default function Resume() {
     useEffect(() => {
         const handleResize = () => {
             if (typeof window !== 'undefined') {
-                const width = window.innerWidth;
                 setWindowWidth(window.innerWidth);
             }
             if (windowWidth <= 770){
